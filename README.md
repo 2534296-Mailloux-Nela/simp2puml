@@ -71,10 +71,7 @@ Installer un paquet construit localement : `sudo dnf install ./dist/<paquet>.rpm
 
 La priorité de l’outil est SIMP vers PlantUML. Le lecteur SIMP vise le profil `sim-project` observé (XML `version="12.75"`, `multi-file="no"`) ; 12.75 est un numéro de format et ne permet pas de connaître la version de l’application. La compatibilité avec Software Ideas Modeler n’a pas été vérifiée. Une sélection explicite du diagramme évite de fusionner les diagrammes ; les objets globaux hors diagramme sélectionné sont exclus.
 
-PlantUML prend en charge notamment classes, interfaces, énumérations ordonnées, symboles d’interface, membres, notes et les relations d’héritage, d’association, d’agrégation, de composition et connecteurs d’interface. Les pertes et ambiguïtés effectivement détectées sont signalées par avertissements ou erreurs. Packages et réalisations ne sont pas pris en charge ; les flèches d’association perdent leur direction. Styles et positions ne sont pas conservés. La conversion inverse PlantUML vers SIMP est expérimentale : dispositions générées en grille et structures/types textuels ou certaines visibilités restent à valider dans l’application. Ne pas interpréter le nombre d’avertissements comme un nombre équivalent d’éléments perdus.
-
-Les directives PlantUML ne sont pas exécutées ; aucun fichier externe n’est inclus ou chargé. Les DTD et entités XML sont rejetées. Les éventuels fichiers locaux `Monopoly.simp`, `Classdiagram1.svg` et `examples/validation/` sont personnels : ils sont exclus du dépôt public et des distributions. Ils ne sont pas fournis avec un clone ; les tests qui nécessitent la fixture réelle sont ignorés uniquement lorsqu’elle est absente. L’exemple [`examples/minimal.puml`](examples/minimal.puml) est synthétique et peut être partagé.
-
+P
 ## Développement
 
 Installer avec `python3 -m venv .venv` puis `.venv/bin/python -m pip install -r requirements-dev.txt`. Tests ciblés : `.venv/bin/python -m pytest -q tests/test_simp.py`, `test_puml.py` ou `test_cli.py`. Exécution : `.venv/bin/python -m simp2puml fichier.simp`. L’ancien `main.py` est conservé comme wrapper de compatibilité.
